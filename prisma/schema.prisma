@@ -81,9 +81,11 @@ model Channel {
   name String
   type ChannelType @default(TEXT)
 
+// プロフィールとサーバーを持つ
+
   profileId String
   profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
-
+  
   serverId String
   server Server @relation(fields: [serverId], references: [id], onDelete: Cascade)
 
