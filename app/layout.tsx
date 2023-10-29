@@ -15,7 +15,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <ClerkProvider>
-      <html lang="en" suppressContentEditableWarning>
+      {/* next-themes がクライアントサイドで html 要素の className を書き換えることで
+      発生する、ハイドレーション不一致の警告を抑制 */}
+      <html lang="en" suppressHydrationWarning>
         <body className={cn("bg-white dark:bg-[#313338]")}>
           <ThemeProvider
             attribute="class"
