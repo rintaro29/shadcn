@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { FileUpload } from "@/components/file-upload";
 import { useRouter } from "next/navigation";
 
+// フォームスキーマの定義
 const formSchema = z.object({
   name: z.string().min(1, {
     message: "Server name is required.",
