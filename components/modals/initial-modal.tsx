@@ -1,4 +1,5 @@
 "use client";
+
 import axios from "axios";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -19,7 +20,6 @@ import { Button } from "@/components/ui/button";
 import { FileUpload } from "@/components/file-upload";
 import { useRouter } from "next/navigation";
 
-// フォームスキーマの定義
 const formSchema = z.object({
   name: z.string().min(1, {
     message: "Server name is required.",
@@ -83,7 +83,6 @@ export const InitialModal = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        core.tsxのServerImage
                         <FileUpload endpoint="serverImage" value={field.value} onChange={field.onChange} />
                       </FormControl>
                     </FormItem>
