@@ -1,4 +1,4 @@
-import { Channel, ChannelType, Server } from "@prisma/client";
+import { Channel, ChannelType, Server } from "@prisma/client"; //prismaのschemaをimport
 import { create } from "zustand";
 
 export type ModalType =
@@ -22,6 +22,7 @@ interface ModalData {
   query?: Record<string, any>;
 }
 
+// ModalStoreという型を作成
 interface ModalStore {
   type: ModalType | null;
   data: ModalData;
@@ -30,10 +31,13 @@ interface ModalStore {
   onClose: () => void;
 }
 
+// zustandのcreateを使って、useModalというカスタムフックを作成
 export const useModal = create<ModalStore>((set) => ({
+  // デフォルトstateの設定
   type: null,
   data: {},
   isOpen: false,
+  // アクションの設定。setを使ってstateを更新する関数
   onOpen: (type, data = {}) => set({ isOpen: true, type, data }),
   onClose: () => set({ type: null, isOpen: false }),
 }));

@@ -18,7 +18,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { FileUpload } from "@/components/file-upload";
 import { useRouter } from "next/navigation";
-import { useModal } from "@/hooks/use-modal-store";
+import { useModal } from "@/hooks/use-modal-store"; //zustandを使用
 
 const formSchema = z.object({
   name: z.string().min(1, {
